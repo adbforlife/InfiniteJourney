@@ -17,6 +17,7 @@
 		64D64CDE1E48D1610028D0B2 /* Cowboy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 64D64CDD1E48D1610028D0B2 /* Cowboy.sks */; };
 		64D64CE01E48D3E30028D0B2 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */; };
 		F5BFA3EA1E4A3AAB0093CA37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */; };
+		F5EF9B121E5DDAE7007A8E14 /* Cowgirl.sks in Resources */ = {isa = PBXBuildFile; fileRef = F5EF9B111E5DDAE7007A8E14 /* Cowgirl.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		64D64CDD1E48D1610028D0B2 /* Cowboy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cowboy.sks; sourceTree = "<group>"; };
 		64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F5EF9B111E5DDAE7007A8E14 /* Cowgirl.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cowgirl.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				641B9D531E40C7DF0093534D /* AppDelegate.swift */,
 				641B9D551E40C7DF0093534D /* GameScene.sks */,
 				64D64CDD1E48D1610028D0B2 /* Cowboy.sks */,
+				F5EF9B111E5DDAE7007A8E14 /* Cowgirl.sks */,
 				64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */,
 				641B9D591E40C7DF0093534D /* GameScene.swift */,
 				641B9D5B1E40C7DF0093534D /* GameViewController.swift */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6452C9BA1E491BE3001F0CF6 /* AnimationActions.sks in Resources */,
+				F5EF9B121E5DDAE7007A8E14 /* Cowgirl.sks in Resources */,
 				F5BFA3EA1E4A3AAB0093CA37 /* Main.storyboard in Resources */,
 				641B9D561E40C7DF0093534D /* GameScene.sks in Resources */,
 				64D64CDE1E48D1610028D0B2 /* Cowboy.sks in Resources */,
