@@ -177,6 +177,10 @@ class GameScene: SKScene {
     }
     
     func touchDown(atPoint pos : CGPoint) {
+        var n = self.childNode(withName: "Wind")!.copy() as! SKNode
+        n.position = pos
+        n.run(SKAction(named: "Wind")!)
+        
     }
     
     func touchMoved(toPoint pos : CGPoint) {
