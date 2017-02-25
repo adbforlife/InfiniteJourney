@@ -14,7 +14,6 @@
 		641B9D611E40C7DF0093534D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641B9D601E40C7DF0093534D /* Assets.xcassets */; };
 		6452C9BA1E491BE3001F0CF6 /* AnimationActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6452C9B91E491BE3001F0CF6 /* AnimationActions.sks */; };
 		6452C9BC1E491D29001F0CF6 /* Cowboy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6452C9BB1E491D29001F0CF6 /* Cowboy.swift */; };
-		647EC96A1E5DD7E500786EF3 /* Wind.sks in Resources */ = {isa = PBXBuildFile; fileRef = 647EC9691E5DD7E500786EF3 /* Wind.sks */; };
 		64D64CDE1E48D1610028D0B2 /* Cowboy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 64D64CDD1E48D1610028D0B2 /* Cowboy.sks */; };
 		64D64CE01E48D3E30028D0B2 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */; };
 		F5BFA3EA1E4A3AAB0093CA37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */; };
@@ -30,7 +29,6 @@
 		641B9D651E40C7DF0093534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6452C9B91E491BE3001F0CF6 /* AnimationActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = AnimationActions.sks; path = ../AnimationActions.sks; sourceTree = "<group>"; };
 		6452C9BB1E491D29001F0CF6 /* Cowboy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cowboy.swift; sourceTree = "<group>"; };
-		647EC9691E5DD7E500786EF3 /* Wind.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Wind.sks; sourceTree = "<group>"; };
 		64D64CDD1E48D1610028D0B2 /* Cowboy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cowboy.sks; sourceTree = "<group>"; };
 		64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 				641B9D5B1E40C7DF0093534D /* GameViewController.swift */,
 				F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */,
 				641B9D601E40C7DF0093534D /* Assets.xcassets */,
-				647EC9691E5DD7E500786EF3 /* Wind.sks */,
 				641B9D651E40C7DF0093534D /* Info.plist */,
 			);
 			path = InfiniteJourney;
@@ -150,7 +147,6 @@
 				6452C9BA1E491BE3001F0CF6 /* AnimationActions.sks in Resources */,
 				F5BFA3EA1E4A3AAB0093CA37 /* Main.storyboard in Resources */,
 				641B9D561E40C7DF0093534D /* GameScene.sks in Resources */,
-				647EC96A1E5DD7E500786EF3 /* Wind.sks in Resources */,
 				64D64CDE1E48D1610028D0B2 /* Cowboy.sks in Resources */,
 				641B9D611E40C7DF0093534D /* Assets.xcassets in Resources */,
 			);
