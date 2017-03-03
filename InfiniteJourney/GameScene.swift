@@ -21,6 +21,7 @@ class GameScene: SKScene {
     var scrollLayerMediumFast: SKNode!
     var scrollLayerMedium: SKNode!
     var scrollLayerSlow: SKNode!
+    var button1: MSButtonNode!
     var scoreLabel: SKLabelNode!
     var cowboy: Cowboy!
     var cowboyYPosition: CGFloat!
@@ -36,9 +37,15 @@ class GameScene: SKScene {
         scrollLayerMedium = self.childNode(withName: "scrollLayerMedium")
         scrollLayerSlow = self.childNode(withName: "scrollLayerSlow")
         scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
+        button1 = self.childNode(withName: "button1") as! MSButtonNode
         cowboy = self.childNode(withName: "cowboy") as! Cowboy
         cowboyYPosition = CGFloat(cowboy.position.y)
         scoreLabel.text = String(points) + " m"
+        
+        /*button1.selectedHandler = { [unowned self] in
+            print("jaja")
+        }*/
+
         
         let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipedRight(_:)))
         swipeRight.direction = .right
