@@ -30,6 +30,7 @@ class GameScene: SKScene {
     var animationCounter: Int = 0
     let run = SKAction(named: "Run")!
     var points = 0
+    var wind: SKSpriteNode!
     
     override func didMove(to view: SKView) {
         scrollLayerFast = self.childNode(withName: "scrollLayerFast")
@@ -39,6 +40,7 @@ class GameScene: SKScene {
         scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
         button1 = self.childNode(withName: "button1") as! MSButtonNode
         cowboy = self.childNode(withName: "cowboy") as! Cowboy
+        wind = self.childNode(withName: "Wind") as! SKSpriteNode
         cowboyYPosition = CGFloat(cowboy.position.y)
         scoreLabel.text = String(points) + " m"
         
@@ -184,6 +186,11 @@ class GameScene: SKScene {
     }
     
     func touchDown(atPoint pos : CGPoint) {
+        let n = self.childNode(withName: "Wind")!.copy() as! SKSpriteNode
+        n.position = pos
+        n.run(SKAction.sequence([SKAction(named: "Wind")!, SKAction.removeFromParent()]))
+        n.zPosition = 3
+        self.addChild(n)
     }
     
     func touchMoved(toPoint pos : CGPoint) {
@@ -229,6 +236,10 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //wind.run(SKAction(named: "Wind")!)
+        for t in touches    {
+            self.touchDown(atPoint: t.location(in: self))
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
