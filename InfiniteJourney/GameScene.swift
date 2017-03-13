@@ -42,9 +42,9 @@ class GameScene: SKScene {
         cowboyYPosition = CGFloat(cowboy.position.y)
         scoreLabel.text = String(points) + " m"
         
-        /*button1.selectedHandler = { [unowned self] in
+        button1.selectedHandler = { [unowned self] in
             print("jaja")
-        }*/
+        }
 
         
         let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipedRight(_:)))
