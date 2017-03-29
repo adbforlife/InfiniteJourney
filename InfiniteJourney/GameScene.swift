@@ -30,6 +30,7 @@ class GameScene: SKScene {
     let run = SKAction(named: "Run")!
     var points = 0
     var wind: SKSpriteNode!
+    var shop: MSButtonNode!
     
     override func didMove(to view: SKView) {
         scrollLayerFast = self.childNode(withName: "scrollLayerFast")
@@ -39,6 +40,7 @@ class GameScene: SKScene {
         scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
         cowboy = self.childNode(withName: "cowboy") as! Cowboy
         wind = self.childNode(withName: "Wind") as! SKSpriteNode
+        shop = self.childNode(withName: "shop") as! MSButtonNode
         cowboyYPosition = CGFloat(cowboy.position.y)
         scoreLabel.text = String(points) + " m"
         
@@ -57,6 +59,10 @@ class GameScene: SKScene {
         let swipeDown:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipedDown(_:)))
         swipeDown.direction = .down
         view.addGestureRecognizer(swipeDown)
+        
+        shop.selectedHandler = { [unowned self] in
+            print("hey")
+        }
     }
     
     func scrollWorld()  {
@@ -229,7 +235,6 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //wind.run(SKAction(named: "Wind")!)
         for t in touches    {
             self.touchDown(atPoint: t.location(in: self))
         }
