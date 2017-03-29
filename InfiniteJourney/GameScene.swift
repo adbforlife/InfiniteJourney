@@ -233,6 +233,23 @@ class GameScene: SKScene {
             cowboy.characterState = .Sliding
         }
     }
+    func pauseButtonPressed(_ gesture: UIGestureRecognizer) {
+        let effectsNode = SKEffectNode()
+        let filter = CIFilter(name: "CIGaussianBlur")
+        // Set the blur amount. Adjust this to achieve the desired effect
+        let blurAmount = 10.0
+        filter?.setValue(blurAmount, forKey: kCIInputRadiusKey)
+        
+        effectsNode.filter = filter
+        effectsNode.position = self.view!.center
+        effectsNode.blendMode = .alpha
+        self.addChild(scrollLayerFast)
+        self.addChild(scrollLayerSlow)
+        self.addChild(scrollLayerMedium)
+        self.addChild(scrollLayerMediumFast)
+        self.addChild(scoreLabel)
+        self.addChild(cowboy)
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches    {
