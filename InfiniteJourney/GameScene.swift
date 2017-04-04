@@ -27,10 +27,11 @@ class GameScene: SKScene {
     var animationStartTime: TimeInterval = 0.0
     var meterStartTime: TimeInterval = Date().timeIntervalSinceReferenceDate
     var animationCounter: Int = 0
-    let run = SKAction(named: "Run")!
     var points = 0
     var wind: SKSpriteNode!
     var shop: MSButtonNode!
+    var popup: SKSpriteNode!
+    var isGamePaused = false
     
     override func didMove(to view: SKView) {
         scrollLayerFast = self.childNode(withName: "scrollLayerFast")
@@ -41,6 +42,7 @@ class GameScene: SKScene {
         cowboy = self.childNode(withName: "cowboy") as! Cowboy
         wind = self.childNode(withName: "Wind") as! SKSpriteNode
         shop = self.childNode(withName: "shop") as! MSButtonNode
+        popup = self.childNode(withName: "popup") as! SKSpriteNode
         cowboyYPosition = CGFloat(cowboy.position.y)
         scoreLabel.text = String(points) + " m"
         
@@ -61,7 +63,8 @@ class GameScene: SKScene {
         view.addGestureRecognizer(swipeDown)
         
         shop.selectedHandler = { [unowned self] in
-            print("hey")
+            self.isGamePaused = true
+            self.popup.run(SKAction(named: "Expand")!)
         }
     }
     
@@ -233,7 +236,7 @@ class GameScene: SKScene {
             cowboy.characterState = .Sliding
         }
     }
-    func pauseButtonPressed(_ gesture: UIGestureRecognizer) {
+    func shopButtonPressed() {
         let effectsNode = SKEffectNode()
         let filter = CIFilter(name: "CIGaussianBlur")
         // Set the blur amount. Adjust this to achieve the desired effect
@@ -267,6 +270,7 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        if (!isGamePaused)    {
         
         // Update score label
         scoreLabel.text = String(points) + " m"
@@ -319,5 +323,6 @@ class GameScene: SKScene {
         }
         scrollWorld()
         // Called before each frame is rendered
+        }
     }
 }
