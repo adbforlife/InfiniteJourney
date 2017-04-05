@@ -67,6 +67,7 @@ class GameScene: SKScene {
         shop.selectedHandler = { [unowned self] in
             self.isGamePaused = true
             self.blur.position = CGPoint(x: 0, y: 0)
+            self.popup.position = CGPoint(x: 0, y:0)
             self.popup.run(SKAction(named: "Expand")!)
         }
     }
