@@ -191,11 +191,13 @@ class GameScene: SKScene {
     }
     
     func touchDown(atPoint pos : CGPoint) {
-        let n = self.childNode(withName: "Wind")!.copy() as! SKSpriteNode
-        n.position = pos
-        n.run(SKAction.sequence([SKAction(named: "Wind")!, SKAction.removeFromParent()]))
-        n.zPosition = 3
-        self.addChild(n)
+        if (!isGamePaused)  {
+            let n = self.childNode(withName: "Wind")!.copy() as! SKSpriteNode
+            n.position = pos
+            n.run(SKAction.sequence([SKAction(named: "Wind")!, SKAction.removeFromParent()]))
+            n.zPosition = 3
+            self.addChild(n)
+        }
     }
     
     func touchMoved(toPoint pos : CGPoint) {
