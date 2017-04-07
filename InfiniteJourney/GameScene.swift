@@ -32,7 +32,6 @@ class GameScene: SKScene {
     var shop: MSButtonNode!
     var popup: SKSpriteNode!
     var blur: SKSpriteNode!
-    var menuStuff: SKNode!
     var isGamePaused = false
     
     override func didMove(to view: SKView) {
@@ -40,12 +39,11 @@ class GameScene: SKScene {
         scrollLayerMediumFast = self.childNode(withName: "scrollLayerMediumFast")
         scrollLayerMedium = self.childNode(withName: "scrollLayerMedium")
         scrollLayerSlow = self.childNode(withName: "scrollLayerSlow")
-        menuStuff = self.childNode(withName: "menuStuff")
         scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
         cowboy = self.childNode(withName: "cowboy") as! Cowboy
         wind = self.childNode(withName: "Wind") as! SKSpriteNode
         shop = self.childNode(withName: "shop") as! MSButtonNode
-        popup = self.menuStuff.childNode(withName: "popup") as! SKSpriteNode
+        popup = self.childNode(withName: "popup") as! SKSpriteNode
         blur = self.childNode(withName: "blur") as! SKSpriteNode
         cowboyYPosition = CGFloat(cowboy.position.y)
         scoreLabel.text = String(points) + " m"
@@ -69,8 +67,9 @@ class GameScene: SKScene {
         shop.selectedHandler = { [unowned self] in
             self.isGamePaused = true
             self.blur.position = CGPoint(x: 0, y: 0)
-            self.menuStuff.position = CGPoint(x: 0, y:0)
-            self.menuStuff.run(SKAction(named: "Expand")!)
+            self.popup.position = CGPoint(x: 0, y:0)
+            self.blur.position = CGPoint(x: 0, y: 0)
+            self.popup.run(SKAction(named: "Expand")!)
         }
     }
     
