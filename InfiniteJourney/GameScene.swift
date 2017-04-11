@@ -73,6 +73,13 @@ class GameScene: SKScene {
             self.popup.run(SKAction(named: "Expand")!)
             self.backToGame.run(SKAction(named: "backButtonMove")!)
         }
+        
+        backToGame.selectedHandler = {
+            self.isGamePaused = false
+            self.blur.position = CGPoint(x: 1000, y: 0)
+            self.backToGame.position = CGPoint(x: 1000, y:0)
+            self.popup.run(SKAction(named: "Contract")!)
+        }
     }
     
     func scrollWorld()  {
