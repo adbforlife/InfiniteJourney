@@ -30,9 +30,8 @@ class GameScene: SKScene {
     var points = 0
     var wind: SKSpriteNode!
     var shop: MSButtonNode!
-    var popup: SKSpriteNode!
-    var blur: SKSpriteNode!
-    //var shopScreen: SKSpriteNode!
+    var blurBackground: SKSpriteNode!
+    var shopScreen: SKSpriteNode!
     var backToGame: MSButtonNode!
     var isGamePaused = false
     
@@ -45,9 +44,8 @@ class GameScene: SKScene {
         cowboy = self.childNode(withName: "cowboy") as! Cowboy
         wind = self.childNode(withName: "Wind") as! SKSpriteNode
         shop = self.childNode(withName: "shop") as! MSButtonNode
-        popup = self.childNode(withName: "popup") as! SKSpriteNode
-        blur = self.childNode(withName: "blur") as! SKSpriteNode
-        //shopScreen = self.childNode(withName:"shopScreen") as! SKSpriteNode
+        blurBackground = self.childNode(withName: "blurBackground") as! SKSpriteNode
+        shopScreen = self.childNode(withName:"shopScreen") as! SKSpriteNode
         backToGame = self.childNode(withName: "backToGame") as! MSButtonNode
         cowboyYPosition = CGFloat(cowboy.position.y)
         scoreLabel.text = String(points) + " m"
@@ -70,18 +68,16 @@ class GameScene: SKScene {
         
         shop.selectedHandler = { [unowned self] in
             self.isGamePaused = true
-            self.blur.position = CGPoint(x: 0, y: 0)
-            self.popup.position = CGPoint(x: 0, y:0)
-            self.popup.run(SKAction(named: "Expand")!)
-            self.backToGame.run(SKAction(named: "backButtonMove")!)
-            //self.shopScreen.position = CGPoint(x: -375, y: -667)
+            self.shopScreen.run(SKAction(named: "slideDown")!)
+            self.blurBackground.position = CGPoint(x: 0, y:0)
+            self.backToGame.run(SKAction(named: "backButtonDown")!)
         }
         
         backToGame.selectedHandler = {
             self.isGamePaused = false
-            self.blur.position = CGPoint(x: 1000, y: 0)
-            self.backToGame.position = CGPoint(x: 1000, y:0)
-            self.popup.run(SKAction(named: "Contract")!)
+            self.shopScreen.run(SKAction(named: "slideUp")!)
+            self.blurBackground.position = CGPoint(x: 1000, y: 0)
+            self.backToGame.run(SKAction(named: "backButtonUp")!)
         }
     }
     
