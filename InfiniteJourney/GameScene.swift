@@ -32,7 +32,7 @@ class GameScene: SKScene {
     var shop: MSButtonNode!
     var popup: SKSpriteNode!
     var blur: SKSpriteNode!
-    //var shopScreen: SKSpriteNode!
+    var menuStuff: SKSpriteNode!
     var backToGame: MSButtonNode!
     var isGamePaused = false
     
