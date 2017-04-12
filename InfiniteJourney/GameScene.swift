@@ -30,8 +30,14 @@ class GameScene: SKScene {
     var points = 0
     var wind: SKSpriteNode!
     var shop: MSButtonNode!
+<<<<<<< HEAD
     var blurBackground: SKSpriteNode!
     var shopScreen: SKSpriteNode!
+=======
+    var popup: SKSpriteNode!
+    var blur: SKSpriteNode!
+    var menuStuff: SKSpriteNode!
+>>>>>>> origin/master
     var backToGame: MSButtonNode!
     var isGamePaused = false
     
