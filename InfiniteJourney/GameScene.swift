@@ -34,6 +34,10 @@ class GameScene: SKScene {
     var shopScreen: SKSpriteNode!
     var backToGame: MSButtonNode!
     var isGamePaused = false
+    var button1: MSButtonNode!
+    var button2: MSButtonNode!
+    var button3: MSButtonNode!
+    var hotdog: SKSpriteNode!
     
     override func didMove(to view: SKView) {
         scrollLayerFast = self.childNode(withName: "scrollLayerFast")
@@ -49,6 +53,10 @@ class GameScene: SKScene {
         backToGame = self.childNode(withName: "backToGame") as! MSButtonNode
         cowboyYPosition = CGFloat(cowboy.position.y)
         scoreLabel.text = String(points) + " m"
+        button1 = self.childNode(withName: "button1") as! MSButtonNode
+        button2 = self.childNode(withName: "button2") as! MSButtonNode
+        button3 = self.childNode(withName: "button3") as! MSButtonNode
+        hotdog = self.childNode(withName: "hotdog") as! SKSpriteNode
         
         let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipedRight(_:)))
         swipeRight.direction = .right
@@ -66,7 +74,7 @@ class GameScene: SKScene {
         swipeDown.direction = .down
         view.addGestureRecognizer(swipeDown)
         
-        shop.selectedHandler = { [unowned self] in
+        shop.selectedHandler = {
             self.isGamePaused = true
             self.shopScreen.run(SKAction(named: "slideDown")!)
             self.blurBackground.position = CGPoint(x: 0, y:0)
@@ -78,6 +86,14 @@ class GameScene: SKScene {
             self.shopScreen.run(SKAction(named: "slideUp")!)
             self.blurBackground.position = CGPoint(x: 1000, y: 0)
             self.backToGame.run(SKAction(named: "backButtonUp")!)
+        }
+        
+        button1.selectedHandler = {
+            self.hotdog.run(SKAction(named: "Hotdog")!)
+        }
+        button2.selectedHandler = {
+        }
+        button3.selectedHandler = {
         }
     }
     
@@ -205,7 +221,7 @@ class GameScene: SKScene {
             let n = self.childNode(withName: "Wind")!.copy() as! SKSpriteNode
             n.position = pos
             n.run(SKAction.sequence([SKAction(named: "Wind")!, SKAction.removeFromParent()]))
-            n.zPosition = 3
+            n.zPosition = 2
             self.addChild(n)
         }
     }
