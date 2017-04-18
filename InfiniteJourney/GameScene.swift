@@ -41,6 +41,7 @@ class GameScene: SKScene {
     var button2: MSButtonNode!
     var button3: MSButtonNode!
     var hotdog: SKSpriteNode!
+    var runningTime = 0.0
     
     override func didMove(to view: SKView) {
 
@@ -94,6 +95,7 @@ class GameScene: SKScene {
         
         button1.selectedHandler = {
             self.hotdog.run(SKAction(named: "Hotdog")!)
+            self.startRunning(x: 2.8)
         }
         button2.selectedHandler = {
         }
@@ -236,7 +238,8 @@ class GameScene: SKScene {
     func touchUp(atPoint pos : CGPoint) {
     }
     
-    func swipedRight(_ gesture: UIGestureRecognizer) {
+    func startRunning(x: Double) {
+        runningTime = x
         points += cowboy.clickPoint
         animationCounter = 0
         animationStartTime = Date().timeIntervalSinceReferenceDate
@@ -246,6 +249,10 @@ class GameScene: SKScene {
             cowboy.run(SKAction(named: "Run")!)
             cowboy.characterState = .Running
         }
+    }
+    
+    func swipedRight(_ gesture: UIGestureRecognizer) {
+        startRunning(x: 3.0)
     }
     
     func swipedLeft(_ gesture: UIGestureRecognizer) {
@@ -306,58 +313,62 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         if (!isGamePaused)    {
-        
-        // Update score label
-        scoreLabel.text = String(points) + " m"
-        
-        // Assign current speed
-        switch cowboy.characterState    {
-        case .Idle:
-            cowboy.currentSpeed = cowboy.idleSpeed
-        case .Running:
-            cowboy.currentSpeed = cowboy.runningSpeed
-        case .Sliding:
-            cowboy.currentSpeed = cowboy.slidingSpeed
-        case .Jumping:
-            cowboy.currentSpeed = cowboy.jumpingSpeed
+            
+            // Update score label
+            scoreLabel.text = String(points) + " m"
+            
+            // Assign current speed
+            switch cowboy.characterState    {
+            case .Idle:
+                cowboy.currentSpeed = cowboy.idleSpeed
+            case .Running:
+                cowboy.currentSpeed = cowboy.runningSpeed
+            case .Sliding:
+                cowboy.currentSpeed = cowboy.slidingSpeed
+            case .Jumping:
+                cowboy.currentSpeed = cowboy.jumpingSpeed
 
-        }
-        
-        let currentTime = Date().timeIntervalSinceReferenceDate
-        
-        if (cowboy.characterState == .Running) {
-            cowboy.position.y = cowboyYPosition! - 15.0
-        }
-        // Check if meter needs to be added
-        if (currentTime - meterStartTime >= 1.0 / Double(cowboy.currentSpeed))  {
-            points += Int(floor((currentTime - meterStartTime) * Double(cowboy.currentSpeed)))
-            meterStartTime = currentTime
-        }
-        // Check if animation needs to be removed
-        if (currentTime - animationStartTime >= 1.0) {
-            animationCounter += 1
-            cowboy.position.y = cowboyYPosition
-            if (animationCounter == 1)  {
-                cowboy.characterState = .Idle
-                switch cowboy.characterState    {
-                case .Running:
-                    cowboy.removeAction(forKey: "Run")
-                    cowboy.run(SKAction(named: "Idle")!)
-                case .Sliding:
-                    cowboy.removeAction(forKey: "Slide")
-                    cowboy.run(SKAction(named: "Idle")!)
-                case .Jumping:
-                    cowboy.removeAction(forKey: "Jump")
-                    cowboy.run(SKAction(named: "Idle")!)
-                default:
-                    cowboy.run(SKAction(named: "Idle")!)
-                }
             }
-        }   else    {
-            cowboy.position.y = cowboyYPosition! - 15.0
-        }
-        scrollWorld()
-        // Called before each frame is rendered
+            
+            let currentTime = Date().timeIntervalSinceReferenceDate
+            
+            //if (hotdog.hasActions())    {
+              //  startRunning(x: 2.8)
+            //}
+            
+            if (cowboy.characterState == .Running) {
+                cowboy.position.y = cowboyYPosition! - 15.0
+            }
+            // Check if meter needs to be added
+            if (currentTime - meterStartTime >= 1.0 / Double(cowboy.currentSpeed))  {
+                points += Int(floor((currentTime - meterStartTime) * Double(cowboy.currentSpeed)))
+                meterStartTime = currentTime
+            }
+            // Check if animation needs to be removed
+            if (currentTime - animationStartTime >= runningTime) {
+                animationCounter += 1
+                cowboy.position.y = cowboyYPosition
+                if (animationCounter == 1)  {
+                    cowboy.characterState = .Idle
+                    switch cowboy.characterState    {
+                    case .Running:
+                        cowboy.removeAction(forKey: "Run")
+                        cowboy.run(SKAction(named: "Idle")!)
+                    case .Sliding:
+                        cowboy.removeAction(forKey: "Slide")
+                        cowboy.run(SKAction(named: "Idle")!)
+                    case .Jumping:
+                        cowboy.removeAction(forKey: "Jump")
+                        cowboy.run(SKAction(named: "Idle")!)
+                    default:
+                        cowboy.run(SKAction(named: "Idle")!)
+                    }
+                }
+            }   else    {
+                cowboy.position.y = cowboyYPosition! - 15.0
+            }
+            scrollWorld()
+            // Called before each frame is rendered
         }
     }
 }
