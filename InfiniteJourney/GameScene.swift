@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    
+
     let groundScrollSpeed: CGFloat = 900
     let mountainScrollSpeed: CGFloat = 300
     let cactusScrollSpeed: CGFloat = 450
@@ -33,6 +33,9 @@ class GameScene: SKScene {
     var blurBackground: SKSpriteNode!
     var shopScreen: SKSpriteNode!
     var backToGame: MSButtonNode!
+    var energyButton: MSButtonNode!
+    var speedButton: MSButtonNode!
+    var hotdogButton: MSButtonNode!
     var isGamePaused = false
     var button1: MSButtonNode!
     var button2: MSButtonNode!
@@ -40,6 +43,7 @@ class GameScene: SKScene {
     var hotdog: SKSpriteNode!
     
     override func didMove(to view: SKView) {
+
         scrollLayerFast = self.childNode(withName: "scrollLayerFast")
         scrollLayerMediumFast = self.childNode(withName: "scrollLayerMediumFast")
         scrollLayerMedium = self.childNode(withName: "scrollLayerMedium")
