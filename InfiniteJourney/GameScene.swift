@@ -33,15 +33,16 @@ class GameScene: SKScene {
     var blurBackground: SKSpriteNode!
     var shopScreen: SKSpriteNode!
     var backToGame: MSButtonNode!
-    var energyButton: MSButtonNode!
-    var speedButton: MSButtonNode!
-    var hotdogButton: MSButtonNode!
-    var isGamePaused = false
     var button1: MSButtonNode!
     var button2: MSButtonNode!
     var button3: MSButtonNode!
     var hotdog: SKSpriteNode!
+<<<<<<< HEAD
     var runningTime = 0.0
+=======
+    var energy: SKSpriteNode!
+    var isGamePaused = false
+>>>>>>> origin/master
     
     override func didMove(to view: SKView) {
 
@@ -62,6 +63,7 @@ class GameScene: SKScene {
         button2 = self.childNode(withName: "button2") as! MSButtonNode
         button3 = self.childNode(withName: "button3") as! MSButtonNode
         hotdog = self.childNode(withName: "hotdog") as! SKSpriteNode
+        energy = self.childNode(withName: "energy") as! SKSpriteNode
         
         let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipedRight(_:)))
         swipeRight.direction = .right
@@ -98,6 +100,7 @@ class GameScene: SKScene {
             self.startRunning(x: 2.8)
         }
         button2.selectedHandler = {
+            self.energy.run(SKAction(named: "Energy")!)
         }
         button3.selectedHandler = {
         }
