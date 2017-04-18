@@ -37,12 +37,9 @@ class GameScene: SKScene {
     var button2: MSButtonNode!
     var button3: MSButtonNode!
     var hotdog: SKSpriteNode!
-<<<<<<< HEAD
     var runningTime = 0.0
-=======
     var energy: SKSpriteNode!
     var isGamePaused = false
->>>>>>> origin/master
     
     override func didMove(to view: SKView) {
 
@@ -73,7 +70,8 @@ class GameScene: SKScene {
         swipeLeft.direction = .left
         view.addGestureRecognizer(swipeLeft)
         
-        let swipeUp:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipedUp(_:)))
+        let swipeUp:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector
+            (GameScene.swipedUp(_:)))
         swipeUp.direction = .up
         view.addGestureRecognizer(swipeUp)
         
