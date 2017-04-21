@@ -96,6 +96,7 @@ class GameScene: SKScene {
         button1.selectedHandler = {
             self.hotdog.run(SKAction(named: "Hotdog")!)
             self.startRunning(x: 2.8)
+            self.cowboy.characterState = .Idle
         }
         button2.selectedHandler = {
             self.energy.run(SKAction(named: "Energy")!)
@@ -224,7 +225,7 @@ class GameScene: SKScene {
     }
     
     func touchDown(atPoint pos : CGPoint) {
-        if (!isGamePaused)  {
+        if (!self.isGamePaused)  {
             let n = self.childNode(withName: "Wind")!.copy() as! SKSpriteNode
             n.position = pos
             n.run(SKAction.sequence([SKAction(named: "Wind")!, SKAction.removeFromParent()]))
@@ -315,7 +316,7 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        if (!isGamePaused)    {
+        if (!self.isGamePaused)    {
             
             // Update score label
             scoreLabel.text = String(points) + " m"
