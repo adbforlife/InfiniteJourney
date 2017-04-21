@@ -261,6 +261,7 @@ class GameScene: SKScene {
     }
     
     func swipedUp(_ gesture: UIGestureRecognizer) {
+        runningTime = 1
         animationCounter = 0
         animationStartTime = Date().timeIntervalSinceReferenceDate
         if (cowboy.characterState != .Jumping) {
@@ -271,6 +272,7 @@ class GameScene: SKScene {
     }
     
     func swipedDown(_ gesture: UIGestureRecognizer) {
+        runningTime = 1
         animationCounter = 0
         animationStartTime = Date().timeIntervalSinceReferenceDate
         if (cowboy.characterState != .Sliding) {
