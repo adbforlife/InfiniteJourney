@@ -40,6 +40,7 @@ class GameScene: SKScene {
     var hotdog: SKSpriteNode!
     var runningTime = 0.0
     var energy: SKSpriteNode!
+    var spinningCoin: SKSpriteNode!
     var isGamePaused = false
     
     override func didMove(to view: SKView) {
@@ -62,6 +63,9 @@ class GameScene: SKScene {
         button3 = self.childNode(withName: "button3") as! MSButtonNode
         hotdog = self.childNode(withName: "hotdog") as! SKSpriteNode
         energy = self.childNode(withName: "energy") as! SKSpriteNode
+        spinningCoin = self.childNode(withName: "spinningCoin") as! SKSpriteNode
+
+        self.spinningCoin.run(SKAction(named: "spinningCoin")!)
         
         let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipedRight(_:)))
         swipeRight.direction = .right
@@ -299,15 +303,6 @@ class GameScene: SKScene {
         }
     }
     func shopButtonPressed() {
-        let effectsNode = SKEffectNode()
-        let filter = CIFilter(name: "CIGaussianBlur")
-        // Set the blur amount. Adjust this to achieve the desired effect
-        let blurAmount = 10.0
-        filter?.setValue(blurAmount, forKey: kCIInputRadiusKey)
-        
-        effectsNode.filter = filter
-        effectsNode.position = self.view!.center
-        effectsNode.blendMode = .alpha
         self.addChild(scrollLayerFast)
         self.addChild(scrollLayerSlow)
         self.addChild(scrollLayerMedium)
