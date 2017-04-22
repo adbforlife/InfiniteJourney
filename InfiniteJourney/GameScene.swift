@@ -12,10 +12,11 @@ import GameplayKit
 
 class GameScene: SKScene {
 
-    let groundScrollSpeed: CGFloat = 900
-    let mountainScrollSpeed: CGFloat = 300
-    let cactusScrollSpeed: CGFloat = 450
-    let cloudScrollSpeed: CGFloat = 100
+    let speedChangeFactor: CGFloat = 1.5
+    var groundScrollSpeed: CGFloat = 900
+    var mountainScrollSpeed: CGFloat = 300
+    var cactusScrollSpeed: CGFloat = 450
+    var cloudScrollSpeed: CGFloat = 100
     let staticDelta: TimeInterval = 1.0/60.0
     var scrollLayerFast: SKNode!
     var scrollLayerMediumFast: SKNode!
@@ -224,6 +225,20 @@ class GameScene: SKScene {
         }
     }
     
+    func changeSpeed(factor: CGFloat)   {
+        groundScrollSpeed *= factor
+        mountainScrollSpeed *= factor
+        cactusScrollSpeed *= factor
+        cloudScrollSpeed *= factor
+    }
+    
+    func returnSpeed()  {
+        groundScrollSpeed = 900
+        mountainScrollSpeed = 300
+        cactusScrollSpeed = 450
+        cloudScrollSpeed = 100
+    }
+    
     func touchDown(atPoint pos : CGPoint) {
         if (!self.isGamePaused)  {
             let n = self.childNode(withName: "Wind")!.copy() as! SKSpriteNode
@@ -241,6 +256,7 @@ class GameScene: SKScene {
     }
     
     func startRunning(x: Double) {
+        changeSpeed(factor: 2.0)
         runningTime = x
         points += cowboy.clickPoint
         animationCounter = 0
@@ -331,7 +347,6 @@ class GameScene: SKScene {
                 cowboy.currentSpeed = cowboy.slidingSpeed
             case .Jumping:
                 cowboy.currentSpeed = cowboy.jumpingSpeed
-
             }
             
             let currentTime = Date().timeIntervalSinceReferenceDate
@@ -354,6 +369,7 @@ class GameScene: SKScene {
                 cowboy.position.y = cowboyYPosition
                 if (animationCounter == 1)  {
                     cowboy.characterState = .Idle
+                    returnSpeed()
                     switch cowboy.characterState    {
                     case .Running:
                         cowboy.removeAction(forKey: "Run")
