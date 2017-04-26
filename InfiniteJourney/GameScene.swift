@@ -64,6 +64,9 @@ class GameScene: SKScene {
         hotdog = self.childNode(withName: "hotdog") as! SKSpriteNode
         energy = self.childNode(withName: "energy") as! SKSpriteNode
         spinningCoin = self.childNode(withName: "spinningCoin") as! SKSpriteNode
+        spinningCoin.run(SKAction(named: "spinningCoin")!)
+
+        //spinningCoin.run(SKAction.repeatForever(SKAction.sequence([SKAction.run(spawnCoin), SKAction.wait(forDuration: 0.3)])))
 
         let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipedRight(_:)))
         swipeRight.direction = .right
@@ -206,9 +209,12 @@ class GameScene: SKScene {
         cloudScrollSpeed = 100
     }
     /*func spawnCoin()    {
-        spinningCoin.position = CGPoint(x: 1000, y:500)
+        spinningCoin.position = CGPoint(x: 200, y:-500)
         spinningCoin.run(SKAction(named: "moveCoin")!)
-        self.spinningCoin.run(SKAction(named: "spinningCoin")!)
+        if (spinningCoin.position.x<frame.size.width)
+        {
+            spinningCoin.removeFromParent()
+        }
     }*/
     
     func touchDown(atPoint pos : CGPoint) {
@@ -313,10 +319,12 @@ class GameScene: SKScene {
             }
             
             let currentTime = Date().timeIntervalSinceReferenceDate
-            
-            //if (hotdog.hasActions())    {
-              //  startRunning(x: 2.8)
-            //}
+            //let remainderTime = currentTime.truncatingRemainder(dividingBy: 60.0)//compiles but obviously doesnt work
+
+            /*if (remainderTime==0)
+            {
+                 run(SKAction.repeatForever(SKAction.sequence([SKAction.run(spawnCoin), SKAction.wait(forDuration: 0.3)])))
+            }*/
             
             if (cowboy.characterState == .Running) {
                 cowboy.position.y = cowboyYPosition! - 15.0
