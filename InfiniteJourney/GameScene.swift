@@ -270,6 +270,7 @@ class GameScene: SKScene {
             cowboy.characterState = .Sliding
         }
     }
+    
     func shopButtonPressed() {
         self.addChild(scrollLayerFast)
         self.addChild(scrollLayerSlow)
@@ -313,10 +314,6 @@ class GameScene: SKScene {
             }
             
             let currentTime = Date().timeIntervalSinceReferenceDate
-            
-            //if (hotdog.hasActions())    {
-              //  startRunning(x: 2.8)
-            //}
             
             if (cowboy.characterState == .Running) {
                 cowboy.position.y = cowboyYPosition! - 15.0
