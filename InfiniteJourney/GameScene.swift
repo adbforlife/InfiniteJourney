@@ -320,15 +320,12 @@ class GameScene: SKScene {
             }
             
             let currentTime = Date().timeIntervalSinceReferenceDate
-<<<<<<< HEAD
             //let remainderTime = currentTime.truncatingRemainder(dividingBy: 60.0)//compiles but obviously doesnt work
 
             /*if (remainderTime==0)
             {
                  run(SKAction.repeatForever(SKAction.sequence([SKAction.run(spawnCoin), SKAction.wait(forDuration: 0.3)])))
             }*/
-=======
->>>>>>> origin/master
             
             if (cowboy.characterState == .Running) {
                 cowboy.position.y = cowboyYPosition! - 15.0
