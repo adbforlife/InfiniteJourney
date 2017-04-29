@@ -23,6 +23,8 @@ class GameScene: SKScene {
     var scrollLayerMedium: SKNode!
     var scrollLayerSlow: SKNode!
     var scoreLabel: SKLabelNode!
+    var onesDigit: CGFloat = 0
+    var tensDigit: CGFloat = 0
     var cowboy: Cowboy!
     var cowboyYPosition: CGFloat!
     var animationStartTime: TimeInterval = 0.0
@@ -76,11 +78,6 @@ class GameScene: SKScene {
         swipeLeft.direction = .left
         view.addGestureRecognizer(swipeLeft)
         
-        let swipeUp:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector
-            (GameScene.swipedUp(_:)))
-        swipeUp.direction = .up
-        view.addGestureRecognizer(swipeUp)
-        
         let swipeDown:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipedDown(_:)))
         swipeDown.direction = .down
         view.addGestureRecognizer(swipeDown)
@@ -90,6 +87,7 @@ class GameScene: SKScene {
             self.shopScreen.run(SKAction(named: "slideDown")!)
             self.blurBackground.position = CGPoint(x: 0, y:0)
             self.backToGame.run(SKAction(named: "backButtonDown")!)
+            self.shop.position = CGPoint(x: 500, y: 540)
         }
         
         backToGame.selectedHandler = {
@@ -97,6 +95,7 @@ class GameScene: SKScene {
             self.shopScreen.run(SKAction(named: "slideUp")!)
             self.blurBackground.position = CGPoint(x: 1000, y: 0)
             self.backToGame.run(SKAction(named: "backButtonUp")!)
+            self.shop.position = CGPoint(x: 240, y: 540)
         }
         
         button1.selectedHandler = {
@@ -258,17 +257,6 @@ class GameScene: SKScene {
         print("swiped left")
     }
     
-    func swipedUp(_ gesture: UIGestureRecognizer) {
-        runningTime = 1
-        animationCounter = 0
-        animationStartTime = Date().timeIntervalSinceReferenceDate
-        if (cowboy.characterState != .Jumping) {
-            cowboy.removeAction(forKey: "Idle")
-            cowboy.run(SKAction(named: "Jump")!)
-            cowboy.characterState = .Jumping
-        }
-    }
-    
     func swipedDown(_ gesture: UIGestureRecognizer) {
         runningTime = 1
         animationCounter = 0
@@ -318,8 +306,6 @@ class GameScene: SKScene {
                 cowboy.currentSpeed = cowboy.runningSpeed
             case .Sliding:
                 cowboy.currentSpeed = cowboy.slidingSpeed
-            case .Jumping:
-                cowboy.currentSpeed = cowboy.jumpingSpeed
             }
             
             let currentTime = Date().timeIntervalSinceReferenceDate
@@ -351,9 +337,6 @@ class GameScene: SKScene {
                         cowboy.run(SKAction(named: "Idle")!)
                     case .Sliding:
                         cowboy.removeAction(forKey: "Slide")
-                        cowboy.run(SKAction(named: "Idle")!)
-                    case .Jumping:
-                        cowboy.removeAction(forKey: "Jump")
                         cowboy.run(SKAction(named: "Idle")!)
                     default:
                         cowboy.run(SKAction(named: "Idle")!)

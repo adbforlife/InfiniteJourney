@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 enum cowboyState    {
-    case Idle, Running, Sliding, Jumping
+    case Idle, Running, Sliding
 }
 
 class Cowboy: SKSpriteNode  {
@@ -21,7 +21,6 @@ class Cowboy: SKSpriteNode  {
     var clickPoint = 1
     var runningSpeed = 2
     var slidingSpeed = 3
-    var jumpingSpeed = 4
     
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
