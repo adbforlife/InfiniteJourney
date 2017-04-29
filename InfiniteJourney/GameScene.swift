@@ -208,14 +208,17 @@ class GameScene: SKScene {
         cactusScrollSpeed = 450
         cloudScrollSpeed = 100
     }
-    /*func spawnCoin()    {
-        spinningCoin.position = CGPoint(x: 200, y:-500)
-        spinningCoin.run(SKAction(named: "moveCoin")!)
-        if (spinningCoin.position.x<frame.size.width)
+    
+    func spawnCoin()    {
+        let randomNumber = Int(arc4random_uniform(UInt32(100))) - Int(arc4random_uniform(UInt32(100)))
+        let coin = self.childNode(withName: "spinningCoin")!.copy() as! SKSpriteNode
+        coin.position = CGPoint(x: frame.size.width / 2, y: CGFloat(randomNumber))
+        coin.run(SKAction(named: "moveCoin")!)
+        if (coin.position.x<frame.size.width)
         {
-            spinningCoin.removeFromParent()
+            coin.removeFromParent()
         }
-    }*/
+    }
     
     func touchDown(atPoint pos : CGPoint) {
         if (!self.isGamePaused)  {
