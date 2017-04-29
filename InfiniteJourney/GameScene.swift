@@ -38,7 +38,6 @@ class GameScene: SKScene {
     var backToGame: MSButtonNode!
     var button1: MSButtonNode!
     var button2: MSButtonNode!
-    var button3: MSButtonNode!
     var hotdog: SKSpriteNode!
     var runningTime = 0.0
     var energy: SKSpriteNode!
@@ -62,7 +61,6 @@ class GameScene: SKScene {
         scoreLabel.text = String(points) + " m"
         button1 = self.childNode(withName: "button1") as! MSButtonNode
         button2 = self.childNode(withName: "button2") as! MSButtonNode
-        button3 = self.childNode(withName: "button3") as! MSButtonNode
         hotdog = self.childNode(withName: "hotdog") as! SKSpriteNode
         energy = self.childNode(withName: "energy") as! SKSpriteNode
         spinningCoin = self.childNode(withName: "spinningCoin") as! SKSpriteNode
@@ -105,8 +103,6 @@ class GameScene: SKScene {
         }
         button2.selectedHandler = {
             self.energy.run(SKAction(named: "Energy")!)
-        }
-        button3.selectedHandler = {
         }
     }
     
