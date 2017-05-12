@@ -17,7 +17,9 @@
 		6452C9BC1E491D29001F0CF6 /* Cowboy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6452C9BB1E491D29001F0CF6 /* Cowboy.swift */; };
 		64D64CDE1E48D1610028D0B2 /* Cowboy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 64D64CDD1E48D1610028D0B2 /* Cowboy.sks */; };
 		64D64CE01E48D3E30028D0B2 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */; };
+		F596DCBE1EBE1AC500747012 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596DCBD1EBE1AC500747012 /* MainMenu.swift */; };
 		F5BFA3EA1E4A3AAB0093CA37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */; };
+		F5FA5FBC1EB8BE7A00E76CE2 /* MainScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = F5FA5FBB1EB8BE7A00E76CE2 /* MainScreen.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +35,9 @@
 		6452C9BB1E491D29001F0CF6 /* Cowboy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cowboy.swift; sourceTree = "<group>"; };
 		64D64CDD1E48D1610028D0B2 /* Cowboy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cowboy.sks; sourceTree = "<group>"; };
 		64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		F596DCBD1EBE1AC500747012 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F5FA5FBB1EB8BE7A00E76CE2 /* MainScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainScreen.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +73,12 @@
 				6452C9B91E491BE3001F0CF6 /* AnimationActions.sks */,
 				6452C9BB1E491D29001F0CF6 /* Cowboy.swift */,
 				641B9D531E40C7DF0093534D /* AppDelegate.swift */,
-				641B9D551E40C7DF0093534D /* GameScene.sks */,
+				F5FA5FBB1EB8BE7A00E76CE2 /* MainScreen.sks */,
+				F596DCBD1EBE1AC500747012 /* MainMenu.swift */,
 				64D64CDD1E48D1610028D0B2 /* Cowboy.sks */,
 				64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */,
 				641812041E8BED5D00FF8B83 /* MSButtonNode.swift */,
+				641B9D551E40C7DF0093534D /* GameScene.sks */,
 				641B9D591E40C7DF0093534D /* GameScene.swift */,
 				641B9D5B1E40C7DF0093534D /* GameViewController.swift */,
 				F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */,
@@ -147,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5FA5FBC1EB8BE7A00E76CE2 /* MainScreen.sks in Resources */,
 				6452C9BA1E491BE3001F0CF6 /* AnimationActions.sks in Resources */,
 				F5BFA3EA1E4A3AAB0093CA37 /* Main.storyboard in Resources */,
 				641B9D561E40C7DF0093534D /* GameScene.sks in Resources */,
@@ -164,6 +171,7 @@
 			files = (
 				641B9D5A1E40C7DF0093534D /* GameScene.swift in Sources */,
 				641B9D5C1E40C7DF0093534D /* GameViewController.swift in Sources */,
+				F596DCBE1EBE1AC500747012 /* MainMenu.swift in Sources */,
 				64D64CE01E48D3E30028D0B2 /* CGFloat+Extensions.swift in Sources */,
 				641812051E8BED5D00FF8B83 /* MSButtonNode.swift in Sources */,
 				641B9D541E40C7DF0093534D /* AppDelegate.swift in Sources */,

@@ -42,6 +42,7 @@ class GameScene: SKScene {
     var runningTime = 0.0
     var energy: SKSpriteNode!
     var spinningCoin: SKSpriteNode!
+    var donateButton: MSButtonNode!
     var isGamePaused = false
     
     override func didMove(to view: SKView) {
@@ -65,6 +66,7 @@ class GameScene: SKScene {
         energy = self.childNode(withName: "energy") as! SKSpriteNode
         spinningCoin = self.childNode(withName: "spinningCoin") as! SKSpriteNode
         spinningCoin.run(SKAction(named: "spinningCoin")!)
+        donateButton = self.shopScreen.childNode(withName: "donateButton") as! MSButtonNode
 
         //spinningCoin.run(SKAction.repeatForever(SKAction.sequence([SKAction.run(spawnCoin), SKAction.wait(forDuration: 0.3)])))
 
@@ -103,6 +105,8 @@ class GameScene: SKScene {
         }
         button2.selectedHandler = {
             self.energy.run(SKAction(named: "Energy")!)
+        }
+        donateButton.selectedHandler = {
         }
     }
     
