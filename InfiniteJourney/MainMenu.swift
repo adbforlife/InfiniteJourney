@@ -36,8 +36,8 @@ class MainMenuScene: SKScene
         playButton.selectedHandler = {
             let scene = SKScene(fileNamed: "GameScene")
             scene?.scaleMode = .aspectFill
-            // Present the scene
-            view.presentScene(scene)
+            let sceneTransition = SKTransition.crossFade(withDuration: 1.3)
+            view.presentScene(scene!, transition: sceneTransition)
         }
     }
     
