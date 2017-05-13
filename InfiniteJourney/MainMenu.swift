@@ -24,12 +24,21 @@ class MainMenuScene: SKScene
     var scrollLayerSlow: SKNode!
     var scoreLabel: SKLabelNode!
     var animationStartTime: TimeInterval = 0.0
+    var playButton: MSButtonNode!
 
     override func didMove(to view: SKView) {
         scrollLayerFast = self.childNode(withName: "scrollLayerFast")
         scrollLayerMediumFast = self.childNode(withName: "scrollLayerMediumFast")
         scrollLayerMedium = self.childNode(withName: "scrollLayerMedium")
         scrollLayerSlow = self.childNode(withName: "scrollLayerSlow")
+        playButton = self.childNode(withName: "startButton") as! MSButtonNode
+
+        playButton.selectedHandler = {
+            let scene = SKScene(fileNamed: "GameScene")
+            scene?.scaleMode = .aspectFill
+            // Present the scene
+            view.presentScene(scene)
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
