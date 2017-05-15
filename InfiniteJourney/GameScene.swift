@@ -44,6 +44,7 @@ class GameScene: SKScene {
     var spinningCoin: SKSpriteNode!
     var donateButton: MSButtonNode!
     var isGamePaused = false
+    var nodeGenerationTimer: Timer!
     
     override func didMove(to view: SKView) {
 
@@ -64,11 +65,8 @@ class GameScene: SKScene {
         button2 = self.childNode(withName: "button2") as! MSButtonNode
         hotdog = self.childNode(withName: "hotdog") as! SKSpriteNode
         energy = self.childNode(withName: "energy") as! SKSpriteNode
-        spinningCoin = self.childNode(withName: "spinningCoin") as! SKSpriteNode
-        spinningCoin.run(SKAction(named: "spinningCoin")!)
         donateButton = self.shopScreen.childNode(withName: "donateButton") as! MSButtonNode
-
-        //spinningCoin.run(SKAction.repeatForever(SKAction.sequence([SKAction.run(spawnCoin), SKAction.wait(forDuration: 0.3)])))
+        nodeGenerationTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(GameScene.nodeGeneration), userInfo: nil, repeats: true)
 
         let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipedRight(_:)))
         swipeRight.direction = .right
@@ -193,7 +191,17 @@ class GameScene: SKScene {
             cloud2.position = self.convert(newPosition, to: scrollLayerSlow)
         }
     }
-    
+
+    func nodeGeneration() {
+        spinningCoin = self.childNode(withName: "spinningCoin") as! SKSpriteNode
+        spinningCoin.run(SKAction(named: "spinningCoin")!)
+        let randomX = CGFloat(Int(arc4random_uniform(1)+1))
+        spinningCoin.position = CGPoint(x: frame.size.width*randomX, y: 123)
+        let moveAction = SKAction.moveBy(x: -1, y: 0, duration: 0.005)
+        let repeatMoveAction = SKAction.repeatForever(moveAction)
+        spinningCoin.run(repeatMoveAction)
+    }
+
     func changeSpeed(factor: CGFloat)   {
         groundScrollSpeed *= factor
         mountainScrollSpeed *= factor
@@ -309,12 +317,6 @@ class GameScene: SKScene {
             }
             
             let currentTime = Date().timeIntervalSinceReferenceDate
-            //let remainderTime = currentTime.truncatingRemainder(dividingBy: 60.0)//compiles but obviously doesnt work
-
-            /*if (remainderTime==0)
-            {
-                 run(SKAction.repeatForever(SKAction.sequence([SKAction.run(spawnCoin), SKAction.wait(forDuration: 0.3)])))
-            }*/
             
             if (cowboy.characterState == .Running) {
                 cowboy.position.y = cowboyYPosition! - 15.0
