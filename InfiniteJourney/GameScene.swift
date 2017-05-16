@@ -45,6 +45,19 @@ class GameScene: SKScene {
     var donateButton: MSButtonNode!
     var isGamePaused = false
     var nodeGenerationTimer: Timer!
+    var meterValue: SKNode!
+    
+    var zero: SKSpriteNode!
+    var one: SKSpriteNode!
+    var two: SKSpriteNode!
+    var three: SKSpriteNode!
+    var four: SKSpriteNode!
+    var five: SKSpriteNode!
+    var six: SKSpriteNode!
+    var seven: SKSpriteNode!
+    var eight: SKSpriteNode!
+    var nine: SKSpriteNode!
+    var meter: SKSpriteNode!
     
     override func didMove(to view: SKView) {
 
@@ -65,6 +78,23 @@ class GameScene: SKScene {
         button2 = self.childNode(withName: "button2") as! MSButtonNode
         hotdog = self.childNode(withName: "hotdog") as! SKSpriteNode
         energy = self.childNode(withName: "energy") as! SKSpriteNode
+        meterValue = self.childNode(withName: "meterValue")
+        
+        /*zero = self.childNode(withName: "zero") as! SKSpriteNode
+        one = self.childNode(withName: "one") as! SKSpriteNode
+        two = self.childNode(withName: "two") as! SKSpriteNode
+        three = self.childNode(withName: "three") as! SKSpriteNode
+        four = self.childNode(withName: "four") as! SKSpriteNode
+        five = self.childNode(withName: "five") as! SKSpriteNode
+        six = self.childNode(withName: "six") as! SKSpriteNode
+        seven = self.childNode(withName: "seven") as! SKSpriteNode
+        eight = self.childNode(withName: "eight") as! SKSpriteNode
+        nine = self.childNode(withName: "nine") as! SKSpriteNode
+        meter = self.childNode(withName: "meter") as! SKSpriteNode*/
+        
+        //spinningCoin = self.childNode(withName: "spinningCoin") as! SKSpriteNode
+        //spinningCoin.run(SKAction(named: "spinningCoin")!)
+        
         donateButton = self.shopScreen.childNode(withName: "donateButton") as! MSButtonNode
         nodeGenerationTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(GameScene.nodeGeneration), userInfo: nil, repeats: true)
 
@@ -193,7 +223,11 @@ class GameScene: SKScene {
     }
 
     func nodeGeneration() {
-        spinningCoin = self.childNode(withName: "spinningCoin") as! SKSpriteNode
+        if let coin = spinningCoin  {
+            coin.removeFromParent()
+        }
+        spinningCoin = self.childNode(withName: "spinningCoin")!.copy() as! SKSpriteNode
+        self.addChild(spinningCoin)
         spinningCoin.run(SKAction(named: "spinningCoin")!)
         let randomX = CGFloat(Int(arc4random_uniform(1)+1))
         spinningCoin.position = CGPoint(x: frame.size.width+100, y: -frame.size.height/2 + 170)
@@ -297,6 +331,22 @@ class GameScene: SKScene {
         if (!self.isGamePaused)    {
             
             // Update score label
+            
+            /*for i in String(points).characters.indices {
+                switch String(points)[i]    {
+                    case "0":
+                        let n = zero.copy() as! SKSpriteNode
+                        print("0")
+                    case "1":
+                        print("1")
+                    case "2":
+                        print("2")
+                    case "3":
+                        print("3")
+                    default:
+                        print("adb")
+                }
+            }*/
             scoreLabel.text = String(points) + " m"
             
             // Assign current speed
