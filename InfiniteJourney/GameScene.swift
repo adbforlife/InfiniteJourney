@@ -196,10 +196,14 @@ class GameScene: SKScene {
         spinningCoin = self.childNode(withName: "spinningCoin") as! SKSpriteNode
         spinningCoin.run(SKAction(named: "spinningCoin")!)
         let randomX = CGFloat(Int(arc4random_uniform(1)+1))
-        spinningCoin.position = CGPoint(x: frame.size.width*randomX, y: 123)
-        let moveAction = SKAction.moveBy(x: -1, y: 0, duration: 0.005)
+        spinningCoin.position = CGPoint(x: frame.size.width+100, y: -frame.size.height/2 + 170)
+        let moveAction = SKAction.moveBy(x: -1*randomX, y: 0, duration: 0.005)
         let repeatMoveAction = SKAction.repeatForever(moveAction)
         spinningCoin.run(repeatMoveAction)
+        if (spinningCoin.position.x<frame.size.width)
+        {
+            spinningCoin.removeFromParent()
+        }
     }
 
     func changeSpeed(factor: CGFloat)   {
@@ -214,17 +218,6 @@ class GameScene: SKScene {
         mountainScrollSpeed = 300
         cactusScrollSpeed = 450
         cloudScrollSpeed = 100
-    }
-    
-    func spawnCoin()    {
-        let randomNumber = Int(arc4random_uniform(UInt32(100))) - Int(arc4random_uniform(UInt32(100)))
-        let coin = self.childNode(withName: "spinningCoin")!.copy() as! SKSpriteNode
-        coin.position = CGPoint(x: frame.size.width / 2, y: CGFloat(randomNumber))
-        coin.run(SKAction(named: "moveCoin")!)
-        if (coin.position.x<frame.size.width)
-        {
-            coin.removeFromParent()
-        }
     }
     
     func touchDown(atPoint pos : CGPoint) {
