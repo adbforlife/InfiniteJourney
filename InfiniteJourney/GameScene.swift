@@ -46,7 +46,6 @@ class GameScene: SKScene {
     var isGamePaused = false
     var nodeGenerationTimer: Timer!
     var meterValue: SKNode!
-    
     var zero: SKSpriteNode!
     var one: SKSpriteNode!
     var two: SKSpriteNode!
@@ -91,9 +90,6 @@ class GameScene: SKScene {
         eight = self.childNode(withName: "eight") as! SKSpriteNode
         nine = self.childNode(withName: "nine") as! SKSpriteNode
         meter = self.childNode(withName: "meter") as! SKSpriteNode*/
-        
-        //spinningCoin = self.childNode(withName: "spinningCoin") as! SKSpriteNode
-        //spinningCoin.run(SKAction(named: "spinningCoin")!)
         
         donateButton = self.shopScreen.childNode(withName: "donateButton") as! MSButtonNode
         nodeGenerationTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(GameScene.nodeGeneration), userInfo: nil, repeats: true)

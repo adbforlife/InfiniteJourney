@@ -18,6 +18,8 @@
 		64D64CDE1E48D1610028D0B2 /* Cowboy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 64D64CDD1E48D1610028D0B2 /* Cowboy.sks */; };
 		64D64CE01E48D3E30028D0B2 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */; };
 		F558F5C91ECA54D800616ECF /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558F5C81ECA54D800616ECF /* Levels.swift */; };
+		F558F5CB1ECB2ED200616ECF /* LevelsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F558F5CA1ECB2ED200616ECF /* LevelsScene.sks */; };
+		F558F5CD1ECC8B6900616ECF /* SKMultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558F5CC1ECC8B6900616ECF /* SKMultiLineLabel.swift */; };
 		F596DCBE1EBE1AC500747012 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596DCBD1EBE1AC500747012 /* MainMenu.swift */; };
 		F5BFA3EA1E4A3AAB0093CA37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */; };
 		F5FA5FBC1EB8BE7A00E76CE2 /* MainScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = F5FA5FBB1EB8BE7A00E76CE2 /* MainScreen.sks */; };
@@ -37,6 +39,8 @@
 		64D64CDD1E48D1610028D0B2 /* Cowboy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cowboy.sks; sourceTree = "<group>"; };
 		64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		F558F5C81ECA54D800616ECF /* Levels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
+		F558F5CA1ECB2ED200616ECF /* LevelsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelsScene.sks; sourceTree = "<group>"; };
+		F558F5CC1ECC8B6900616ECF /* SKMultiLineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMultiLineLabel.swift; sourceTree = "<group>"; };
 		F596DCBD1EBE1AC500747012 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F5FA5FBB1EB8BE7A00E76CE2 /* MainScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainScreen.sks; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				641B9D551E40C7DF0093534D /* GameScene.sks */,
 				641B9D591E40C7DF0093534D /* GameScene.swift */,
 				F558F5C81ECA54D800616ECF /* Levels.swift */,
+				F558F5CA1ECB2ED200616ECF /* LevelsScene.sks */,
+				F558F5CC1ECC8B6900616ECF /* SKMultiLineLabel.swift */,
 				641B9D5B1E40C7DF0093534D /* GameViewController.swift */,
 				F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */,
 				641B9D601E40C7DF0093534D /* Assets.xcassets */,
@@ -160,6 +166,7 @@
 				6452C9BA1E491BE3001F0CF6 /* AnimationActions.sks in Resources */,
 				F5BFA3EA1E4A3AAB0093CA37 /* Main.storyboard in Resources */,
 				641B9D561E40C7DF0093534D /* GameScene.sks in Resources */,
+				F558F5CB1ECB2ED200616ECF /* LevelsScene.sks in Resources */,
 				64D64CDE1E48D1610028D0B2 /* Cowboy.sks in Resources */,
 				641B9D611E40C7DF0093534D /* Assets.xcassets in Resources */,
 			);
@@ -176,6 +183,7 @@
 				641B9D5C1E40C7DF0093534D /* GameViewController.swift in Sources */,
 				F558F5C91ECA54D800616ECF /* Levels.swift in Sources */,
 				F596DCBE1EBE1AC500747012 /* MainMenu.swift in Sources */,
+				F558F5CD1ECC8B6900616ECF /* SKMultiLineLabel.swift in Sources */,
 				64D64CE01E48D3E30028D0B2 /* CGFloat+Extensions.swift in Sources */,
 				641812051E8BED5D00FF8B83 /* MSButtonNode.swift in Sources */,
 				641B9D541E40C7DF0093534D /* AppDelegate.swift in Sources */,
