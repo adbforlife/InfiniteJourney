@@ -15,6 +15,7 @@
 		641B9D611E40C7DF0093534D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641B9D601E40C7DF0093534D /* Assets.xcassets */; };
 		6452C9BA1E491BE3001F0CF6 /* AnimationActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6452C9B91E491BE3001F0CF6 /* AnimationActions.sks */; };
 		6452C9BC1E491D29001F0CF6 /* Cowboy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6452C9BB1E491D29001F0CF6 /* Cowboy.swift */; };
+		64A274D11ECB31520087F9DA /* ShopItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A274D01ECB31520087F9DA /* ShopItems.swift */; };
 		64D64CDE1E48D1610028D0B2 /* Cowboy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 64D64CDD1E48D1610028D0B2 /* Cowboy.sks */; };
 		64D64CE01E48D3E30028D0B2 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */; };
 		F558F5C91ECA54D800616ECF /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558F5C81ECA54D800616ECF /* Levels.swift */; };
@@ -36,6 +37,7 @@
 		641B9D651E40C7DF0093534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6452C9B91E491BE3001F0CF6 /* AnimationActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = AnimationActions.sks; path = ../AnimationActions.sks; sourceTree = "<group>"; };
 		6452C9BB1E491D29001F0CF6 /* Cowboy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cowboy.swift; sourceTree = "<group>"; };
+		64A274D01ECB31520087F9DA /* ShopItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopItems.swift; sourceTree = "<group>"; };
 		64D64CDD1E48D1610028D0B2 /* Cowboy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cowboy.sks; sourceTree = "<group>"; };
 		64D64CDF1E48D3E30028D0B2 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		F558F5C81ECA54D800616ECF /* Levels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
@@ -87,8 +89,12 @@
 				641B9D551E40C7DF0093534D /* GameScene.sks */,
 				641B9D591E40C7DF0093534D /* GameScene.swift */,
 				F558F5C81ECA54D800616ECF /* Levels.swift */,
+<<<<<<< Updated upstream
 				F558F5CA1ECB2ED200616ECF /* LevelsScene.sks */,
 				F558F5CC1ECC8B6900616ECF /* SKMultiLineLabel.swift */,
+=======
+				64A274D01ECB31520087F9DA /* ShopItems.swift */,
+>>>>>>> Stashed changes
 				641B9D5B1E40C7DF0093534D /* GameViewController.swift */,
 				F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */,
 				641B9D601E40C7DF0093534D /* Assets.xcassets */,
@@ -188,6 +194,7 @@
 				641812051E8BED5D00FF8B83 /* MSButtonNode.swift in Sources */,
 				641B9D541E40C7DF0093534D /* AppDelegate.swift in Sources */,
 				6452C9BC1E491D29001F0CF6 /* Cowboy.swift in Sources */,
+				64A274D11ECB31520087F9DA /* ShopItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

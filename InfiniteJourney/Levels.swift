@@ -12,11 +12,5 @@ import GameplayKit
 
 class Levels: SKScene {
     var levelDistances: [Int]=[500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7000, 9000]
-    var levelMessages: [String]=["The Infinite Journey.  May your expedition begin...",
-                                 "You are one of the most sought-after outlaws in the Wild West.  Do you have what it takes to survive? You're a ruthless murderer, killing your first stranger at the age of 12. You did what you had to to stay alive.",
-                                 "You were born in Feburary 29, 1860.  The Civil War just started.  You are looking for a means to escape the horrid battles of the East.",
-                                 "You grew up in your parents house, in Missouri.  You loved it there, but something about the"
-                                 ]
+    var levelMessages: [String]=["Old man 1: Oh, another traveler heading to the Dangajee River? All I can tell you is that you are on the right path, and there is a long way ahead of you.", "Old man 2: I didn't expect you to be this consistent. Alright, considering you are determined, I will tell you this much: you will see 9 of me before you reach your destination. You have seen 2 so far. Good luck!", "Old man 3: I heard your wife and three children were killed during a bandit raid on their cattle ranching town on the frontier. What a tragedy... I promise you will find what you need at the Dangajee River.", "Old man 4: I hope you didn't sit down in that burned-down church "]
 }
-
-
