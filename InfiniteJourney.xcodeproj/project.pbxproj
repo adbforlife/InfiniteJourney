@@ -89,12 +89,8 @@
 				641B9D551E40C7DF0093534D /* GameScene.sks */,
 				641B9D591E40C7DF0093534D /* GameScene.swift */,
 				F558F5C81ECA54D800616ECF /* Levels.swift */,
-<<<<<<< Updated upstream
 				F558F5CA1ECB2ED200616ECF /* LevelsScene.sks */,
 				F558F5CC1ECC8B6900616ECF /* SKMultiLineLabel.swift */,
-=======
-				64A274D01ECB31520087F9DA /* ShopItems.swift */,
->>>>>>> Stashed changes
 				641B9D5B1E40C7DF0093534D /* GameViewController.swift */,
 				F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */,
 				641B9D601E40C7DF0093534D /* Assets.xcassets */,
@@ -135,7 +131,7 @@
 				TargetAttributes = {
 					641B9D4F1E40C7DF0093534D = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = KCH6M444Z5;
+						DevelopmentTeam = 859C2TGWWQ;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -296,7 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KCH6M444Z5;
+				DEVELOPMENT_TEAM = 859C2TGWWQ;
 				INFOPLIST_FILE = InfiniteJourney/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -310,7 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KCH6M444Z5;
+				DEVELOPMENT_TEAM = 859C2TGWWQ;
 				INFOPLIST_FILE = InfiniteJourney/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
