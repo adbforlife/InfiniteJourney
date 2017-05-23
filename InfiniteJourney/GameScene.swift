@@ -57,7 +57,10 @@ class GameScene: SKScene {
     var eight: SKSpriteNode!
     var nine: SKSpriteNode!
     var meter: SKSpriteNode!
-    
+    var levelCount: CGFloat = 0
+    var distance: [Int] = Levels().getLevelDistances()
+    var levelNum: Int = 0
+
     override func didMove(to view: SKView) {
 
         scrollLayerFast = self.childNode(withName: "scrollLayerFast")
@@ -344,6 +347,16 @@ class GameScene: SKScene {
                 }
             }*/
             scoreLabel.text = String(points) + " m"
+            /*if (Int(scoreLabel.text!)! >= distance[levelNum])
+            {
+                if let scene = SKScene(fileNamed: "GameScene") {
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+
+                    // Present the scene
+                    view?.presentScene(scene)
+                }
+            }*/
             
             // Assign current speed
             switch cowboy.characterState    {

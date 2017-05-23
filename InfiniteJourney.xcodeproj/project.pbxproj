@@ -91,6 +91,13 @@
 				F558F5C81ECA54D800616ECF /* Levels.swift */,
 				F558F5CA1ECB2ED200616ECF /* LevelsScene.sks */,
 				F558F5CC1ECC8B6900616ECF /* SKMultiLineLabel.swift */,
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+				64A274D01ECB31520087F9DA /* ShopItems.swift */,
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
 				641B9D5B1E40C7DF0093534D /* GameViewController.swift */,
 				F5BFA3E91E4A3AAB0093CA37 /* Main.storyboard */,
 				641B9D601E40C7DF0093534D /* Assets.xcassets */,
